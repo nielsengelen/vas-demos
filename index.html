@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Veeam Availability Suite</title>
+	<link rel="icon" href="images/favicon.ico">
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/zerogrid.css" >
+	<link rel="stylesheet" href="css/responsive.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-migrate-1.1.1.js"></script>
+	<script src="js/superfish.js"></script>
+	<script src="js/jquery.ui.totop.js"></script>
+	<script src="js/jquery.equalheights.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/modifier.js"></script>
+	<script src="js/css3-mediaqueries.js"></script>
+	<script>
+		$(document).ready(function(){
+			!function(){
+		var map=[]
+		 ,names=[]
+		 ,win=$(window)
+		 ,header=$('header')
+		 ,currClass
+		$('.content').each(function(n){
+		 map[n]=this.offsetTop
+		 names[n]=$(this).attr('id')
+		})
+		win
+		 .on('scroll',function(){
+			var i=0
+			while (map[i++]<=win.scrollTop());
+			if (currClass!==names[i-2])
+			currClass=names[i-2]
+			header.removeAttr("class").addClass(names[i-2])
+		 })
+		}(); 
+	});
+	
+	function goToByScroll(id) {
+		$('html,body').animate({scrollTop: $("#"+id).offset().top + 2}, 'slow');
+	}
+	
+	$(document).ready(function(){
+		$().UItoTop({ easingType: 'easeOutQuart' });
+	});
+	</script>
+	<!--[if lt IE 8]>
+		<div style=' clear: both; text-align:center; position: relative;'>
+			<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.</a>
+		</div>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<link rel="stylesheet" media="screen" href="css/ie.css">
+	<![endif]-->
+</head>
+<body>
+	<header class="page1">
+		<div class="zerogrid" id="zerogrid">
+			<div class="col-full">
+				<div class="wrap-col">
+					<div class="menu_block">
+						<nav class="">
+							<ul class="sf-menu">
+								<li class="current men"><a onClick="goToByScroll('page1'); return false;" href="#"><img src="images/hsr.png" class="imgheader" /><br /><span class="menuitem">High Speed<br />Recovery</a></span><strong class="hover"></strong></li>
+								<li class="men1"><a onClick="goToByScroll('page2'); return false;" href="#"><img src="images/dla.png" class="imgheader" /><br /><span class="menuitem">Data Loss<br>Avoidance</a></span><strong class="hover"></strong></li>
+								<li class="men2"><a onClick="goToByScroll('page3'); return false;" href="#"><img src="images/vp.png" class="imgheader" /><br /><span class="menuitem">Verifed<br />Protection</a></span><strong class="hover"></strong></li>
+								<li class="men3"><a onClick="goToByScroll('page4'); return false;" href="#"><img src="images/ld.png" class="imgheader" /><br /><span class="menuitem">Leveraged<br />Data</a></span><strong class="hover"></strong></li>
+								<li class="men4"><a onClick="goToByScroll('page5'); return false;" href="#"><img src="images/cv.png" class="imgheader" /><br /><span class="menuitem">Complete<br />Visibility</a></span><strong class="hover"></strong></li>
+							</ul>
+						</nav>
+					</div>
+					<a href="#" onclick="goToByScroll('page1'); reset(); return false;"><img src="images/logo.png" alt="Veeam Availability Suite" class="headerlogo" /></a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="page1" class="content">
+		<div id="rightcolumn1">
+			<div class="video"></div>
+			<div class="fvideo">Select a feature you want to see.</div>
+		</div>
+		<div id="leftcolumn1">
+			<img src="images/hsr.png" class="menuimg" /><span class="menutitle"><br />High Speed Recovery</span><br />
+			<ul class="menuitems">
+				<li><a href="javascript:loadInfo('ivm')">Instant VM Recovery</a></li>
+				<li><a href="javascript:loadInfo('iflrl')">Instant File-level Recovery<br />(Linux)</a></li>
+				<li><a href="javascript:loadInfo('iflrw')">Instant File-level Recovery<br />(Windows)</a></li>
+				<br /><span class="menuheader">Veeam Explorers:</span><br />
+				<li><a href="javascript:loadInfo('vead')">Microsoft Active Directory <span class="v8feature">(v8)</span></a></li>
+				<li><a href="javascript:loadInfo('vex')">Microsoft Exchange</a></li>
+				<li><a href="javascript:loadInfo('vesp')">Microsoft SharePoint</a></li>
+				<li><a href="javascript:loadInfo('vesql')">Microsoft SQL Server <span class="v8feature">(v8)</span></a></li>
+				<br />
+				<li><a href="javascript:loadInfo('veora')">Oracle <span class="v8feature">(v9)</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="page2" class="content">
+		<div id="rightcolumn2">
+			<div class="video"></div>
+			<div class="fvideo">Select a feature you want to see.</div>
+		</div>
+		<div id="leftcolumn2">
+			<img src="images/dla.png" class="menuimg" /><span class="menutitle"><br />Data Loss Avoidance</span><br />
+			<ul class="menuitems">
+				<li><a href="javascript:loadInfo('bj')">Backup Job</a></li>
+				<li><a href="javascript:loadInfo('bcj')">Backup Copy Job<br />(WAN acceleration)</a></li>
+				<li><a href="javascript:loadInfo('rj')">Replication Job</a></li>
+				
+				<br />
+				<li><a href="javascript:loadInfo('bioc')">Backup I/O Control <span class="v8feature">(v8)</a></span></li>
+				<li><a href="javascript:loadInfo('etee')">End-to-End Encryption <span class="v8feature">(v8)</a></span></li>
+				<li><a href="javascript:loadInfo('fp')">Failover Plan <span class="v8feature">(v8)</a></span></li>
+				<li><a href="javascript:loadInfo('vcc')">Veeam Cloud Connect <span class="v8feature">(v8)</span></a></li>
+				
+				<br />
+				<li><a href="javascript:loadInfo('sobr')">Scale-Out Backup Repository <span class="v8feature">(v9)</a></span></li>
+				<li><a href="javascript:loadInfo('pvmbc')">Per-VM Backup Chain <span class="v8feature">(v9)</a></span></li>
+				
+				<br /><span class="menuheader">Backup from Storage Snapshots:</span><br />
+				<li><a href="javascript:loadInfo('bfssemc')">EMC VNX(e)</a> <span class="v8feature">(v9)</span></li>
+				<li><a href="javascript:loadInfo('bfsshp')">HP StoreVirtual/StoreServ</a></li>
+				<li><a href="javascript:loadInfo('bfssna')">NetApp FAS</a> <span class="v8feature">(v8)</span></li>
+				
+				<br /><span class="menuheader">Deduplicating storage:</span><br />
+				<li><a href="javascript:loadInfo('emcdd')">EMC Data Domain Boost <span class="v8feature">(v8)</span></a></li>
+				<li><a href="javascript:loadInfo('exagrid')">Exagrid <span class="v8feature">(v8)</span></a></li>
+				<li><a href="javascript:loadInfo('hpstoreonce')">HP StoreOnce Catalyst <span class="v8feature">(v9)</span></a></li>
+				
+				<br /><span class="menuheader">Native Tape Support:</span><br />
+				<li><a href="javascript:loadInfo('ntt')">Backup to Tape</a></li>
+				<li><a href="javascript:loadInfo('tapegfs')">GFS media pool <span class="v8feature">(v9)</span></a></li>
+				<li><a href="javascript:loadInfo('tapeglobal')">Global media pool <span class="v8feature">(v9)</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="page3" class="content">
+		<div id="rightcolumn3">
+			<div class="video"></div>
+			<div class="fvideo">Select a feature you want to see.</div>
+		</div>
+		<div id="leftcolumn3">
+			<img src="images/vp.png" class="menuimg" /><span class="menutitle"><br />Verified Protection</span><br />
+			<ul class="menuitems">
+				<li><a href="javascript:loadInfo('srb')">SureBackup</a></li>
+				<li><a href="javascript:loadInfo('srr')">SureReplica</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="page4" class="content">
+		<div id="rightcolumn4">
+			<div class="video"></div>
+			<div class="fvideo">Select a feature you want to see.</div>
+		</div>
+		<div id="leftcolumn4">
+			<img src="images/ld.png" class="menuimg" /><span class="menutitle"><br />Leveraged Data</span><br />
+			<ul class="menuitems">
+				<li><a href="javascript:loadInfo('appb')">Application Groups (Backups)</a></li>
+				<li><a href="javascript:loadInfo('appr')">Application Groups (Replicas)</a></li>
+				
+				<br /><span class="menuheader">On-Demand Sandbox:</span><br />
+				<li><a href="javascript:loadInfo('vlb')">From Backups</a></li>
+				<li><a href="javascript:loadInfo('vlbss')">From Storage Snapshots <span class="v8feature">(v9)</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="page5" class="content">
+		<div id="rightcolumn5">
+			<div class="video"></div>
+			<div class="fvideo">Select a feature you want to see.</div>
+		</div>
+		<div id="leftcolumn5">
+			<img src="images/cv.png" class="menuimg" /><span class="menutitle"><br />Complete Visibility</span><br />
+			<ul class="menuitems">
+				<li><a href="javascript:loadInfo('vone')">Veeam One</a></li>
+				<li><a href="javascript:loadInfo('vmp')">Veeam Mangement Pack</a></li>
+			</ul>
+		</div>
+	</div>
+	<footer>
+		<div class="zerogrid" id="about">
+			<div class="col-full">
+				<div class="wrap-col">
+					<div class="copy">&copy; 2015 | Created by <a href="https://www.twitter.com/nielsengelen" target="_blank">Niels Engelen</a> & <a href="https://www.twitter.com/tdewin" target="_blank">Timothy Dewin</a><br />
+					Additional credits to <a href="https://www.twitter.com/rickvanover" target="_blank">Rick Vanover</a>.<br />
+					Disclaimer: All images used in these video's are &copy; <a href="http://www.veeam.com" target="_blank">Veeam&reg; Software</a>.</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
